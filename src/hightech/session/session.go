@@ -134,7 +134,7 @@ func SendVerify() error {
     loadTemplates()
 
     tpl := "verify"
-    subject := "Please verify your Vault Account"
+    subject := "Please verify your High Tech account"
 
     html := new(bytes.Buffer)
     Templates.ExecuteTemplate(html, fmt.Sprintf("%s.html", tpl), url)
