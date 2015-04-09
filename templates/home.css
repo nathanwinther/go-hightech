@@ -1,0 +1,175 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html, body {
+    background-color: #f5f5ef;
+    COLOR: #282825;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: HelveticaNeue-Light, HelveticaNeue, Helvetica, Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.0rem;
+}
+
+a {
+    color: #282825;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    line-height: 3.0rem;
+    margin: 2.0rem auto;
+    padding: 0;
+    width: 280px;
+}
+
+p {
+    margin: 2.0rem auto;
+    padding: 0;
+    width: 280px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+div.invoice-summary p.message {
+    color: #f00;
+    padding: 0 4.0rem;
+    text-align: center;
+}
+
+div.invoice-summary span.user label {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+div.invoice-summary p.anon label {
+    border: solid 1px #ccc;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 1.0rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: auto;
+}
+
+div.invoice-entry p {
+    font-weight: bold;
+}
+
+div.invoice-entry-hours {
+    background-color: #556270;
+    color: #f5f5ef;
+}
+
+div.invoice-entry-hours ul {
+    margin: 0 auto;
+    width: 300px;
+}
+
+div.invoice-entry-hours ul li {
+    border-top: solid 1px #f5f5ef;
+    border-left: solid 1px #f5f5ef;
+    display: inline-block;
+    width: 60px;
+}
+
+div.invoice-entry-hours ul li label {
+    cursor: pointer;
+    display: block;
+    padding: 0.9rem 0 1.0rem;
+    text-align: center;
+}
+
+div.invoice-entry-hours ul li.hours-0,
+div.invoice-entry-hours ul li.hours-1,
+div.invoice-entry-hours ul li.hours-2,
+div.invoice-entry-hours ul li.hours-3,
+div.invoice-entry-hours ul li.hours-4
+{
+    border-top: solid 1px #556270;
+}
+
+div.invoice-entry-hours ul li.hours-0,
+div.invoice-entry-hours ul li.hours-5,
+div.invoice-entry-hours ul li.hours-10
+{
+    border-left: solid 1px #556270;
+}
+
+div.invoice-entry-hours ul li.hours-15,
+div.invoice-entry-hours ul li.hours-16,
+div.invoice-entry-hours ul li.hours-17,
+div.invoice-entry-hours ul li.hours-18,
+div.invoice-entry-hours ul li.hours-19,
+div.invoice-entry-hours ul li.hours-20,
+div.invoice-entry-hours ul li.hours-21,
+div.invoice-entry-hours ul li.hours-22,
+div.invoice-entry-hours ul li.hours-23,
+div.invoice-entry-hours ul li.hours-24
+{
+    display: none;
+}
+
+div.invoice-entries ul {
+    margin: 0 auto;
+    width: 280px;
+}
+
+div.invoice-entries ul li {
+    margin: 2.0rem 0;
+}
+
+div.invoice-entries ul li a {
+    color: #999;
+    text-decoration: none;
+}
+
+div.invoice-entries ul li.hours a {
+    color: #282825;
+}
+
+div.invoice-entries ul li.today {
+    list-style-type: square;
+    color: #f00;
+}
+
+div.invoice-entries ul li.selected a {
+    color: #282825;
+    text-decoration: underline;
+}
+
+#invoice-entry-hours,
+#invoice-close,
+#invoice-verify
+{
+    display: none;
+}
+
+body.anon .user {
+    display: none;
+}
+
+body.user .anon {
+    display: none;
+}
+

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no">
+<title>High Tech Consultants, LLC</title>
+<style type="text/css">
+{{template "invoice.css"}}
+</style>
+</head>
+<body>
+    <div id="chrome">
+        <h1>High Tech Consultants, LLC</h1>
+        <div class="letterhead">
+            <p>
+                Contract and permanent placement<br>
+                <span class="email">hightech@miscareers.com</span>
+            </p>
+            <p class="address">
+            38 Red Oak Road Suite 2<br>
+                Fairfield, Connecticut 06824<br>
+                (203) 877-2222 FAX 877-9999
+            </p>
+        </div>
+        <h2>BI-Weekly Time Sheet</h2>
+        <h3>
+            {{with index .Invoice.Entries .Invoice.StartDate}}
+            Beginning Sunday the
+            <span class="range day">{{.D}}</span>
+            day of
+            <span class="range month">{{.MMM}}</span>,
+            {{.YYYY}}
+            {{end}}
+        </h3>
+        <h3>
+            {{with index .Invoice.Entries .Invoice.EndDate}}
+            Through Saturday the
+            <span class="range day">{{.D}}</span>
+            day of
+            <span class="range month">{{.MMM}}</span>,
+            {{.YYYY}}
+            {{end}}
+        </h3>
+        <h4>Week 1</h4>
+        <div class="week">
+            <div class="col label">
+                <span class="day">Day</span>
+                <span class="date">Date</span>
+                <span class="hours">Hours</span>
+            </div>
+            {{with index .Invoice.Entries 0}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 1}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 2}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 3}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 4}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 5}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 6}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+        </div>
+
+        <h4>Week 2</h4>
+        <div class="week">
+            <div class="col label">
+                <span class="day">Day</span>
+                <span class="date">Date</span>
+                <span class="hours">Hours</span>
+            </div>
+            {{with index .Invoice.Entries 7}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 8}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 9}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 10}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 11}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 12}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+            {{with index .Invoice.Entries 13}}
+            <div class="col">
+                <span class="day">{{.DDDD}}</span>
+                <span class="date">{{.D}}</span>
+                <span class="hours">{{if .Hours}}{{.Hours}}{{end}}</span>
+            </div>
+            {{end}}
+        </div>
+
+        <h5>Total Hours <span class="hours">{{.Invoice.Total}}</span></h5>
+
+        <div class="signature_block">
+            <div class="consultant">
+                <p class="label">Consultant's Signature:</p>
+                <p class="signature">
+                    <span class="data"></span>
+                    {{.User.Name}}
+                </p>
+                <p class="date">
+                    Date:
+                    <span class="data"></span>
+                </p>
+            </div>
+        </div>
+        <div class="signature_block">
+            <div class="supervisor">
+                <p class="label">Approved by:</p>
+                <p class="signature">
+                    <span class="data"></span>
+                    {{.User.Supervisor}}
+                </p>
+                <p class="date">
+                    Date:
+                    <span class="data"></span>
+                </p>
+            </div>
+        </div>
+        <div class="signature_block">
+            <div class="company">
+                <p class="label">Company:</p>
+                <p class="company">{{.User.Company}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

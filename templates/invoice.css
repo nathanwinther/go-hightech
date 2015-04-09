@@ -1,0 +1,235 @@
+html, body {
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+#chrome {
+    font-family: Arial;
+    font-size: 12pt;
+    line-height: 1.2em;
+    margin: 20px auto;
+    padding: 0;
+    width: 780px;
+}
+
+h1 {
+    border-bottom: solid 1px #000;
+    font-size: 14pt;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Times New Roman";
+    font-size: 14pt;
+    font-style: italic;
+    margin: 26px 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: "Times New Roman";
+    font-size: 12pt;
+    line-height: 1.2em;
+    margin: 0 0 4px;
+    padding: 0;
+}
+
+h3 span.range {
+    border-bottom: solid 1px #000;
+    font-weight: normal;
+    padding: 0 0.75em;
+}
+
+h4 {
+    clear: both;
+    font-family: "Times New Roman";
+    font-size: 14pt;
+    line-height: 1.2em;
+    margin: 25px 0 0;
+    padding: 0;
+}
+
+h5 {
+    font-family: "Times New Roman";
+    font-size: 12pt;
+    font-style: italic;
+    line-height: 1.2em;
+    margin: 20px 0;
+    padding: 0;
+    text-indent: 150px;
+    text-transform: uppercase;
+}
+
+h5 span.hours {
+    border-bottom: solid 1px #000;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0 0.75em;
+}
+
+.letterhead {
+    position: relative;
+}
+
+.letterhead p {
+    font-size: 9pt;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.letterhead p.address {
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.letterhead p span.email {
+    font-family: "Times New Roman";
+    font-size: 10pt;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
+.week {
+    border: solid 1px #000;
+    display: inline-block;
+    width: 778px;
+}
+
+.week .col {
+    font-family: "Times New Roman";
+    font-size: 12pt;
+    font-weight: bold;
+    float: left;
+    line-height: 1em;
+    text-align: center;
+    width: 97px;
+}
+
+.week .col.label {
+    text-align: left;
+    text-indent: 5px;
+    text-transform: uppercase;
+    width: 99px;
+}
+
+.week .col span {
+    display: block;
+    line-height: 18pt;
+    height: 18pt;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.week .col span.day {
+    border-left: solid 1px #000;
+    border-bottom: solid 6px #000;
+    margin-bottom: 6px;
+}
+
+.week .col span.date {
+    border-left: solid 1px #000;
+    border-top: solid 6px #000;
+}
+
+.week .col span.hours {
+    border-left: solid 1px #000;
+    border-top: solid 1px #000;
+}
+
+.week .col.label span.day,
+.week .col.label span.date,
+.week .col.label span.hours {
+    border-left: none 0;
+}
+
+.signature_block {
+    font-family: "Times New Roman";
+    font-size: 11pt;
+    font-weight: bold;
+    height: 60px;
+    line-height: 1em;
+    position: relative;
+}
+
+.signature_block p {
+    margin: 0;
+    padding: 0;
+}
+
+.signature_block .label {
+    text-transform: uppercase;
+}
+
+.signature_block .signature {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    height: 60px;
+    width: 240px;
+}
+
+.signature_block .signature .data {
+    border-bottom: solid 1px #000;
+    display: block;
+    height: 31px;
+}
+
+.signature_block .date {
+    text-transform: uppercase;
+    position: absolute;
+    top: 17px;
+    left: 450px;
+}
+
+.signature_block .date .data {
+    border-bottom: solid 1px #000;
+    display: block;
+    position: absolute;
+    left: 50px;
+    width: 120px;
+}
+
+.signature_block .consultant {
+    display: inline-block;
+    position: relative;
+}
+
+.signature_block .consultant .label {
+    width: 140px;
+}
+
+.signature_block .supervisor .label {
+    width: 110px;
+}
+
+.signature_block .company .label {
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
+.signature_block .company .company {
+    position: absolute;
+    top: 6px;
+    left: 150px;
+}
+
+@media only screen {
+    #chrome {
+        margin: 20px auto;
+    }
+}
+

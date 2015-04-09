@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>High Tech Timesheets</title>
+<style type="text/css">
+{{template "home.css"}}
+</style>
+</head>
+<body class="{{if .LoggedIn}}user{{else}}anon{{end}}">
+
+<div class="invoice-summary">
+    {{if .Message}}<p class="message">{{.Message}}</p>{{end}}
+    <h1>
+        <strong>Invoice</strong> for <strong>{{.Invoice.User.Company}}</strong> from
+        {{with index .Invoice.Invoice.Entries 0}}
+        {{.DDD}}, {{.MMM}} {{.D}}, {{.YYYY}}
+        {{end}}
+        to
+        {{with index .Invoice.Invoice.Entries 13}}
+        {{.DDD}}, {{.MMM}} {{.D}}, {{.YYYY}}
+        {{end}}
+        for <strong>{{.Invoice.Invoice.Total}} Total Hours.</strong>
+    </h1>
+    <p class="anon">
+        <span><label for="verify">Verify</label></span>
+    </p>
+    <p>
+        <span class="user"><label for="close">Close Invoice.</label></span>
+        Open the
+        <a
+            href="/hightech/{{.Invoice.User.LastInvoice}}"
+            target="_blank">
+            Last Invoice.
+        </a>
+    </p>
+</div>
+
+<div class="invoice-entry user">
+    <p>
+        {{with index .Invoice.Invoice.Entries .Invoice.Invoice.Selected}}
+        {{.DDD}}, {{.MMMM}} {{.D}} &ndash; {{.Hours}} Hours
+        {{end}}
+    </p>
+</div>
+
+<div class="invoice-entry-hours user">
+    <ul class="entry-hours">
+        {{range $i, $j := .Hours}}<li
+            class="hours hours-{{$i}}">
+            <label for="hours-{{$i}}">{{$i}}</label>
+        </li>{{end}}
+    </ul>
+</div>
+
+<div class="invoice-entries">
+    <ul class="entries">
+        {{range .Invoice.Invoice.Entries}}<li
+            class="{{if .Hours}}hours{{else}}no-hours{{end}}{{if .Selected}} selected{{end}}{{if .Today}} today{{end}}">
+            <a
+                class="entry"
+                href="{{if .Today}}/hightech{{else}}/hightech/{{.Key}}{{end}}">
+                {{.DDD}}, {{.MMM}} {{.D}} &ndash; {{.Hours}} Hours
+            </a>
+        </li>{{end}}
+    </ul>
+</div>
+
+<form id="invoice-entry-hours" method="POST" action="/hightech/update">
+    <input type="hidden" name="url" value="{{.Url}}">
+    {{with index .Invoice.Invoice.Entries .Invoice.Invoice.Selected}}
+    <input type="hidden" name="key" value="{{.Key}}">
+    {{end}}
+    <fieldset>
+        {{range $i, $j := .Hours}}<input
+            type="submit"
+            id="hours-{{$i}}"
+            name="hours"
+            value="{{$i}}"
+        >{{end}}
+    </fieldset>
+</form>
+
+<form id="invoice-close" method="POST" action="/hightech/close" onsubmit="return confirm('Close Invoice: {{.Invoice.Invoice.Total}} Hours?');">
+    <input id="close" type="submit" value="Close">
+</form>
+
+<form id="invoice-verify" method="POST" action="/hightech/verify">
+    <input id="verify" type="submit" value="Verify">
+</form>
+
+</body>
+</html>
+

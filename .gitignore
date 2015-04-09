@@ -1,0 +1,8 @@
+bin/**
+data/**
+htdocs/hightech/static/data/**
+pkg/**
+src/bitbucket.org/**
+src/github.com/**
+pid
+.DS_Store
